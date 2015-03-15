@@ -240,6 +240,16 @@ observation.</li>
 
 <pre><code class="r">mean(tmp$daily_steps) -&gt; mean_daily_steps
 median(tmp$daily_steps) -&gt; median_daily_steps
+mean_daily_steps
+</code></pre>
+
+<pre><code>## [1] 9354.23
+</code></pre>
+
+<pre><code class="r">median_daily_steps
+</code></pre>
+
+<pre><code>## [1] 10395
 </code></pre>
 
 <table><thead>
@@ -277,13 +287,20 @@ median(tmp$daily_steps) -&gt; median_daily_steps
 </ol>
 
 <pre><code class="r">      tmp[tmp$mean_steps==max(tmp$mean_steps),1]-&gt;tmax
-      tmax
+      tmax 
 </code></pre>
 
 <pre><code>## Source: local data frame [1 x 1]
 ## 
 ##   interval
 ## 1      515
+</code></pre>
+
+<pre><code class="r">      paste(tmax%/%60,tmax%%60,sep=&quot;:&quot;)-&gt;time_string
+      time_string
+</code></pre>
+
+<pre><code>## [1] &quot;8:35&quot;
 </code></pre>
 
 <p><em>So the 5 minute interval which on averages across the 61 days observed contains the maximum number of steps begins at 515 minutes, i.e, 8:35  AM.</em></p>
@@ -374,6 +391,28 @@ mean_steps_imputed=mean(totact_imputed$total_steps)
 mean_steps=mean(totact$total_steps)
 median_steps_imputed=median(totact_imputed$total_steps)
 median_steps=median(totact$total_steps)
+mean_steps
+</code></pre>
+
+<pre><code>## [1] 9354.23
+</code></pre>
+
+<pre><code class="r">median_steps
+</code></pre>
+
+<pre><code>## [1] 10395
+</code></pre>
+
+<pre><code class="r">mean_steps_imputed
+</code></pre>
+
+<pre><code>## [1] 10765.64
+</code></pre>
+
+<pre><code class="r">median_steps_imputed
+</code></pre>
+
+<pre><code>## [1] 10762
 </code></pre>
 
 <table><thead>

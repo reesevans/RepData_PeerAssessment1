@@ -54,6 +54,19 @@ observation.
 ```r
 mean(tmp$daily_steps) -> mean_daily_steps
 median(tmp$daily_steps) -> median_daily_steps
+mean_daily_steps
+```
+
+```
+## [1] 9354.23
+```
+
+```r
+median_daily_steps
+```
+
+```
+## [1] 10395
 ```
 
 
@@ -85,7 +98,7 @@ activity %>%
 
 ```r
       tmp[tmp$mean_steps==max(tmp$mean_steps),1]->tmax
-      tmax
+      tmax 
 ```
 
 ```
@@ -93,6 +106,15 @@ activity %>%
 ## 
 ##   interval
 ## 1      515
+```
+
+```r
+      paste(tmax%/%60,tmax%%60,sep=":")->time_string
+      time_string
+```
+
+```
+## [1] "8:35"
 ```
 
 *So the 5 minute interval which on averages across the 61 days observed contains the maximum number of steps begins at 515 minutes, i.e, 8:35  AM.*
@@ -193,6 +215,35 @@ mean_steps_imputed=mean(totact_imputed$total_steps)
 mean_steps=mean(totact$total_steps)
 median_steps_imputed=median(totact_imputed$total_steps)
 median_steps=median(totact$total_steps)
+mean_steps
+```
+
+```
+## [1] 9354.23
+```
+
+```r
+median_steps
+```
+
+```
+## [1] 10395
+```
+
+```r
+mean_steps_imputed
+```
+
+```
+## [1] 10765.64
+```
+
+```r
+median_steps_imputed
+```
+
+```
+## [1] 10762
 ```
 
 Statistic | Original Data | Data with NAs Imputed
